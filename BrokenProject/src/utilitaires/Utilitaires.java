@@ -1,24 +1,28 @@
 package utilitaires;
 
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Map.Entry;
 import java.util.Scanner;
 
 import model.Groupe;
 
 public class Utilitaires {
-
-	public static int retourneunchiffre() {
-		Scanner sc = new Scanner(System.in);
-		int i = 0;
-			i = sc.nextInt();
-		return i;
+	
+	public static int getIntFromUser() {
+		try {
+			Scanner sc = new Scanner(System.in);
+			return sc.nextInt();
+		}
+		catch (InputMismatchException e) {
+			System.err.println(e);
+		}
+		return 0;
 	}	
 	
-	public static char[] getStringFromUser() {
+	public static String getStringFromUser() {
 		Scanner sc = new Scanner(System.in);
-		char[] s = sc.nextLine();
-		return s;
+		return sc.nextLine();
 	}
 	
 	public static void printGroupes(HashMap<String, Groupe> mapToPrint) {

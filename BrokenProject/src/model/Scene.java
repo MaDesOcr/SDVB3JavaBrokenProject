@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 
-public class Scene extends entity{
+public class Scene extends Entity{
 	
 	int capacite;
 	
